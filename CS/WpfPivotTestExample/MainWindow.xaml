@@ -1,0 +1,60 @@
+﻿<Window x:Class="PivotGridViewModelBinding.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:PivotGridViewModelBinding"
+        xmlns:dxpg="http://schemas.devexpress.com/winfx/2008/xaml/pivotgrid" 
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" 
+        xmlns:dxci="http://schemas.devexpress.com/winfx/2008/xaml/core/internal"
+        xmlns:nwindDataSetTableAdapters="clr-namespace:PivotGridViewModelBinding.nwindDataSetTableAdapters"
+        xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm" 
+        x:Name="Form1" 
+        Title="MainWindow" Height="362" Width="627"
+        DataContext="{dxmvvm:ViewModelSource Type=local:ViewModel}">
+    <Window.Resources>
+        <local:FieldTemplateSelector x:Key="FieldTemplateSelector" />
+        <dx:TypedSimpleSource x:Key="TypedSimpleSource" AdapterType="{x:Type nwindDataSetTableAdapters:SalesPersonTableAdapter}" 
+                              ContextType="{x:Type local:nwindDataSet}" Path="SalesPerson" />
+        <DataTemplate x:Key="DefaultFieldTemplate">
+            <ContentControl>
+                <dxpg:PivotGridField FieldName="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).FieldName, RelativeSource={RelativeSource Self}}"
+                                     Area="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).FieldArea, RelativeSource={RelativeSource Self}}"
+                                     AreaIndex="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).AreaIndex, RelativeSource={RelativeSource Self}}"
+                                     Caption="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).FieldCaption, RelativeSource={RelativeSource Self}}"
+                                     GroupName="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).GroupName, RelativeSource={RelativeSource Self}}"
+                                     GroupIndex="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).GroupIndex, RelativeSource={RelativeSource Self}}"
+                                     dx:XamlHelper.Name="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).UniqueName, RelativeSource={RelativeSource Self}}"
+                                     >
+                </dxpg:PivotGridField>
+            </ContentControl>
+        </DataTemplate>
+        <DataTemplate x:Key="IntervalFieldTemplate">
+            <ContentControl>
+                <dxpg:PivotGridField FieldName="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).FieldName, RelativeSource={RelativeSource Self}}"
+                                     Area="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).FieldArea, RelativeSource={RelativeSource Self}}"
+                                     AreaIndex="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).AreaIndex, RelativeSource={RelativeSource Self}}"
+                                     Caption="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).FieldCaption, RelativeSource={RelativeSource Self}}"
+                                     GroupName="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).GroupName, RelativeSource={RelativeSource Self}}"
+                                     GroupIndex="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).GroupIndex, RelativeSource={RelativeSource Self}}"
+                                     GroupInterval="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).Interval, RelativeSource={RelativeSource Self}}"
+                                     dx:XamlHelper.Name="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).UniqueName, RelativeSource={RelativeSource Self}}"
+                                     HeaderImage="{dx:DXImage Image=Calendar_16x16.png}">
+                </dxpg:PivotGridField>
+            </ContentControl>
+        </DataTemplate>
+        <DataTemplate x:Key="GroupTemplate">
+            <ContentControl>
+                <dxpg:PivotGridGroup 
+                    dx:XamlHelper.Name="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).GroupName, RelativeSource={RelativeSource Self}}">
+                </dxpg:PivotGridGroup>
+            </ContentControl>
+        </DataTemplate>
+    </Window.Resources>
+    <Grid>
+        <dxpg:PivotGridControl x:Name="pivotGridControl1" 
+                               DataSource="{Binding DataSource}"
+                               FieldsSource="{Binding Fields }" 
+                               FieldGeneratorTemplateSelector="{StaticResource FieldTemplateSelector}"
+                               GroupsSource="{Binding Groups}" 
+                               GroupGeneratorTemplate="{StaticResource GroupTemplate}"/>
+    </Grid>
+</Window>
