@@ -22,7 +22,7 @@
                                      Caption="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).FieldCaption, RelativeSource={RelativeSource Self}}"
                                      GroupName="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).GroupName, RelativeSource={RelativeSource Self}}"
                                      GroupIndex="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).GroupIndex, RelativeSource={RelativeSource Self}}"
-                                     dx:XamlHelper.Name="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).UniqueName, RelativeSource={RelativeSource Self}}"
+                                     dx:XamlHelper.Name="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).Name, RelativeSource={RelativeSource Self}}"
                                      >
                 </dxpg:PivotGridField>
             </ContentControl>
