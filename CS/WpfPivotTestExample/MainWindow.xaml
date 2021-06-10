@@ -36,7 +36,7 @@
                                      GroupName="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).GroupName, RelativeSource={RelativeSource Self}}"
                                      GroupIndex="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).GroupIndex, RelativeSource={RelativeSource Self}}"
                                      GroupInterval="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).Interval, RelativeSource={RelativeSource Self}}"
-                                     dx:XamlHelper.Name="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).UniqueName, RelativeSource={RelativeSource Self}}"
+                                     dx:XamlHelper.Name="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).Name, RelativeSource={RelativeSource Self}}"
                                      HeaderImage="{dx:DXImage Image=Calendar_16x16.png}">
                 </dxpg:PivotGridField>
             </ContentControl>
