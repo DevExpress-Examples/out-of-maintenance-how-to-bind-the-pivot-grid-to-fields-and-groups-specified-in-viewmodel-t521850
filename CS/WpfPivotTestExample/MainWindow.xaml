@@ -16,27 +16,27 @@
                               ContextType="{x:Type local:nwindDataSet}" Path="SalesPerson" />
         <DataTemplate x:Key="DefaultFieldTemplate">
             <ContentControl>
-                <dxpg:PivotGridField FieldName="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).FieldName, RelativeSource={RelativeSource Self}}"
-                                     Area="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).FieldArea, RelativeSource={RelativeSource Self}}"
-                                     AreaIndex="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).AreaIndex, RelativeSource={RelativeSource Self}}"
-                                     Caption="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).FieldCaption, RelativeSource={RelativeSource Self}}"
-                                     GroupName="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).GroupName, RelativeSource={RelativeSource Self}}"
-                                     GroupIndex="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).GroupIndex, RelativeSource={RelativeSource Self}}"
-                                     dx:XamlHelper.Name="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).Name, RelativeSource={RelativeSource Self}}"
+                <dxpg:PivotGridField FieldName="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).FieldName, Mode=TwoWay, RelativeSource={RelativeSource Self}}"
+                                     Area="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).FieldArea, Mode=TwoWay, RelativeSource={RelativeSource Self}}"
+                                     AreaIndex="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).AreaIndex, Mode=TwoWay, RelativeSource={RelativeSource Self}}"
+                                     Caption="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).FieldCaption, Mode=TwoWay, RelativeSource={RelativeSource Self}}"
+                                     GroupName="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).GroupName, Mode=TwoWay, RelativeSource={RelativeSource Self}}"
+                                     GroupIndex="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).GroupIndex, Mode=TwoWay, RelativeSource={RelativeSource Self}}"
+                                     dx:XamlHelper.Name="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).Name, Mode=TwoWay, RelativeSource={RelativeSource Self}}"
                                      >
                 </dxpg:PivotGridField>
             </ContentControl>
         </DataTemplate>
         <DataTemplate x:Key="IntervalFieldTemplate">
             <ContentControl>
-                <dxpg:PivotGridField FieldName="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).FieldName, RelativeSource={RelativeSource Self}}"
-                                     Area="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).FieldArea, RelativeSource={RelativeSource Self}}"
-                                     AreaIndex="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).AreaIndex, RelativeSource={RelativeSource Self}}"
-                                     Caption="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).FieldCaption, RelativeSource={RelativeSource Self}}"
-                                     GroupName="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).GroupName, RelativeSource={RelativeSource Self}}"
-                                     GroupIndex="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).GroupIndex, RelativeSource={RelativeSource Self}}"
-                                     GroupInterval="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).Interval, RelativeSource={RelativeSource Self}}"
-                                     dx:XamlHelper.Name="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).Name, RelativeSource={RelativeSource Self}}"
+                <dxpg:PivotGridField FieldName="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).FieldName, Mode=TwoWay, RelativeSource={RelativeSource Self}}"
+                                     Area="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).FieldArea, Mode=TwoWay, RelativeSource={RelativeSource Self}}"
+                                     AreaIndex="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).AreaIndex, Mode=TwoWay, RelativeSource={RelativeSource Self}}"
+                                     Caption="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).FieldCaption, Mode=TwoWay, RelativeSource={RelativeSource Self}}"
+                                     GroupName="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).GroupName, Mode=TwoWay, RelativeSource={RelativeSource Self}}"
+                                     GroupIndex="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).GroupIndex, Mode=TwoWay, RelativeSource={RelativeSource Self}}"
+                                     GroupInterval="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).Interval, Mode=TwoWay, RelativeSource={RelativeSource Self}}"
+                                     dx:XamlHelper.Name="{Binding Path=(dxci:DependencyObjectExtensions.DataContext).Name, Mode=TwoWay, RelativeSource={RelativeSource Self}}"
                                      HeaderImage="{dx:DXImage Image=Calendar_16x16.png}">
                 </dxpg:PivotGridField>
             </ContentControl>
